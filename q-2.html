@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+
+<body>
+    2.Delete Middle Element of Stack.
+
+    <script>
+        class deleteMiddle{
+            constructor(limit) {
+                this.stack = [];
+                this.size = this.stack.length;
+                this.limit = limit || 5;
+            }
+            enque(value) {
+                this.stack.push(value);
+                this.size++;
+            }
+            printStack() {
+                return this.stack;
+            }
+
+            findMiddleIndex() {
+                return Math.floor(this.size / 2);
+            }
+
+            deleteMiddle() {
+                const middleIndex = this.findMiddleIndex();
+                this.stack.splice(middleIndex, 1);
+                return this.stack;
+                this.size--;
+            }
+            
+        }
+
+        const st = new deleteMiddle();
+        st.enque(1);
+        st.enque(2);
+        st.enque(3);
+        st.enque(4);
+        st.enque(5);
+
+        console.log("Stack before deleting middle element:", st.printStack());
+
+
+        console.log("Stack after deleting middle element:", st.deleteMiddle());
+    </script>
+</body>
+
+</html>

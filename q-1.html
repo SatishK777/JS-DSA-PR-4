@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1</title>
+</head>
+
+<body>
+    1.Reverse a Stack usig Queue.
+
+    <script>
+        class revStackByQue {
+            constructor(limit) {
+                this.stack1 = [],
+                    this.stack2 = [],
+                    this.que = [],
+                    this.size1 = this.stack1.length;
+                    this.size2 = this.que.length,
+                    this.limit = limit || 5
+            }
+
+            enque(value) {
+                this.stack1.push(value);
+            }
+            printStack() {
+                return this.stack1;
+            }
+            rev() {
+                while (this.stack1 != 0) {
+                    this.que.push(this.stack1.pop())
+
+                }
+                while (this.que != 0) {
+                    this.stack2.push(this.que.shift());
+                }
+                return this.stack2;
+            }
+
+        }
+
+        let stack = new revStackByQue();
+        stack.enque(1);
+        stack.enque(2);
+        stack.enque(3);
+        stack.enque(4);
+        stack.enque(5);
+
+        console.log("stack", stack.printStack());
+        console.log("reverse stack", stack.rev());
+
+    </script>
+</body>
+
+</html>
